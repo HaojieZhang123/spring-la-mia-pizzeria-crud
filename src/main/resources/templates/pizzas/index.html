@@ -9,7 +9,9 @@
 
     <h1>Pizzas</h1>
 
-    <table>
+    <h3 th:if="${message}" th:text="${message}"></h3>
+
+    <table th:if="${pizzas}">
         <thead>
             <tr>
                 <th>ID</th>

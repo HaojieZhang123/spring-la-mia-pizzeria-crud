@@ -1,5 +1,8 @@
 package org.lessons.java.spring_la_mia_pizzeria_crud.controller;
 
+import java.util.List;
+
+import org.lessons.java.spring_la_mia_pizzeria_crud.model.Pizza;
 import org.lessons.java.spring_la_mia_pizzeria_crud.repository.PizzaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +20,13 @@ public class PizzaController {
     @GetMapping
     public String index(Model model) {
 
-        model.addAttribute("pizzas", repository.findAll());
+        List<Pizza> pizzas = repository.findAll();
+
+        if (pizzas.isEmpty()) {
+            model.addAttribute("message", "Non ci sono pizze disponibili.");
+        } else {
+            model.addAttribute("pizzas", pizzas);
+        }
 
         return "pizzas/index";
     }

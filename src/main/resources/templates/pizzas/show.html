@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Pizza [[${pizza.name}]]</title>
+</head>
+
+<body>
+
+    <h1 th:if="${message}" th:text="${message}"></h1>
+
+    <th:block th:if="${pizza}">
+        <h1 th:text="${pizza.name}"></h1>
+        <p th:text="${pizza.description}"></p>
+        <p>Price: <span th:text="${pizza.price}"></span></p>
+    </th:block>
+
+</body>
+
+</html>

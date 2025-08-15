@@ -11,6 +11,14 @@
 
     <h3 th:if="${message}" th:text="${message}"></h3>
 
+    <div>
+        <h3>Search for a pizzas by name</h3>
+        <form th:action="@{/pizzas}" method="get">
+            <input type="text" name="name" placeholder="Pizza name (eg. Margherita)" />
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
     <table th:if="${pizzas}">
         <thead>
             <tr>

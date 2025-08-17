@@ -10,6 +10,7 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "pizzas")
@@ -20,6 +21,7 @@ public class Pizza {
     private Integer id;
 
     @NotBlank(message = "Il nome della pizza non può essere vuoto")
+    @Size(min = 2, max = 50, message = "Il nome della pizza deve essere tra 2 e 50 caratteri")
     private String name;
 
     @Lob

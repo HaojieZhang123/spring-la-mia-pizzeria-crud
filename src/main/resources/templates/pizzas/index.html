@@ -11,6 +11,18 @@
 
     <h3 th:if="${message}" th:text="${message}"></h3>
 
+    <hr>
+
+    <div>
+        <h3>Create a new pizza</h3>
+
+        <a href="/pizzas/create">
+            <button>Create Pizza</button>
+        </a>
+    </div>
+
+    <hr>
+
     <div>
         <h3>Search for a pizzas by name</h3>
         <form th:action="@{/pizzas}" method="get">

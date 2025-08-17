@@ -9,6 +9,7 @@ import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "pizzas")
@@ -27,7 +28,7 @@ public class Pizza {
     @NotBlank(message = "La foto della pizza non può essere vuota")
     private String photo;
 
-    @NotBlank(message = "Il prezzo della pizza non può essere vuoto")
+    @NotNull(message = "Il prezzo della pizza non può essere vuoto")
     @Min(value = 0, message = "Il prezzo della pizza non puo' essere negativo")
     private BigInteger price;
 

@@ -2,14 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>Create New Pizza</title>
+    <title>Edit Pizza</title>
 </head>
 
 <body>
 
-    <h1>Create New Pizza</h1>
+    <h1>Edit Pizza [[${pizza.name}]]</h1>
 
-    <form th:action="@{/pizzas/create}" method="post" th:object="${pizza}">
+    <form th:action="@{/pizzas/edit}" method="post" th:object="${pizza}">
 
         <div>
             <label for="name">Name:</label>
@@ -56,9 +56,7 @@
             </div>
         </div>
 
-        <button type="submit">Create Pizza</button>
-
-        <button type="reset">Reset all fields</button>
+        <button type="submit">Update Pizza</button>
 
     </form>
 </body>
